@@ -1,0 +1,160 @@
+.profile-container {
+     max-width: 800px;
+     margin: 0 auto;
+     background: #fdfdfd;
+     min-height: 100vh;
+}
+
+.pet-hero {
+     position: relative;
+     height: 400px;
+     width: 100%;
+
+     img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+     }
+
+     .btn-back {
+          position: absolute;
+          top: 20px;
+          left: 20px;
+          background: rgba(255, 255, 255, 0.8);
+          backdrop-filter: blur(5px);
+          padding: 10px 20px;
+          border-radius: 50px;
+          text-decoration: none;
+          color: var(--color-blue);
+          font-weight: 600;
+          z-index: 10;
+     }
+}
+
+.pet-details-card {
+     background: white;
+     margin-top: -40px; // Faz o card subir sobre a foto
+     position: relative;
+     border-radius: 40px 40px 0 0;
+     padding: 2rem;
+     box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.05);
+
+     .pet-main-info {
+          margin-bottom: 2rem;
+
+          .header-info {
+               display: flex;
+               align-items: center;
+               justify-content: space-between;
+
+               h1 {
+                    color: var(--color-blue);
+                    font-size: 2.2rem;
+               }
+
+               .badge-species {
+                    background: var(--color-yellow);
+                    padding: 5px 15px;
+                    border-radius: 20px;
+                    font-weight: 700;
+                    font-size: 0.8rem;
+               }
+          }
+
+          .location {
+               color: var(--color-text-gray);
+               font-size: 0.9rem;
+               margin-top: 5px;
+          }
+     }
+}
+
+.pet-stats-grid {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 15px;
+     margin-bottom: 2rem;
+
+     .stat-item {
+          background: #f8f9fa;
+          padding: 15px;
+          border-radius: 20px;
+          text-align: center;
+
+          small {
+               display: block;
+               color: var(--color-text-gray);
+               font-size: 0.75rem;
+               margin-bottom: 5px;
+          }
+
+          strong {
+               color: var(--color-blue);
+               font-size: 1rem;
+          }
+     }
+}
+
+.pet-description {
+     margin-bottom: 2rem;
+
+     h3 {
+          color: var(--color-blue);
+          margin-bottom: 10px;
+     }
+
+     p {
+          color: #555;
+          line-height: 1.6;
+     }
+}
+
+.pet-health-tags {
+     margin-bottom: 3rem;
+
+     h3 {
+          color: var(--color-blue);
+          margin-bottom: 15px;
+     }
+
+     .tags-container {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+
+          .tag {
+               padding: 8px 16px;
+               border-radius: 12px;
+               font-size: 0.85rem;
+               font-weight: 600;
+
+               &.check {
+                    background: #e8f5e9;
+                    color: #2e7d32;
+               }
+
+               &.info {
+                    background: #e3f2fd;
+                    color: #1565c0;
+               }
+          }
+     }
+}
+
+.btn-adopt-now {
+     width: 100%;
+     padding: 1.2rem;
+     background: var(--color-blue);
+     color: white;
+     border: none;
+     border-radius: 50px;
+     font-size: 1.1rem;
+     font-weight: 700;
+     cursor: pointer;
+     transition: transform 0.2s;
+
+     &:hover {
+          transform: scale(1.02);
+          filter: brightness(1.1);
+     }
+}
