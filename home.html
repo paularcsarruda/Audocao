@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>AuDoção - Encontre seu pet</title>
+     <link rel="stylesheet" href="style.css">
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+     <main class="home-container">
+          <header class="home-header">
+               <h1>Encontre seu novo melhor amigo</h1>
+               <p>Pets esperando por um lar em Recife e região</p>
+          </header>
+
+          <nav class="filter-nav">
+               <button class="filter-btn active" data-filter="Todos">Todos</button>
+               <button class="filter-btn" data-filter="Cão">Cães</button>
+               <button class="filter-btn" data-filter="Gato">Gatos</button>
+               <button class="filter-btn" data-filter="Outros">Outras espécies</button>
+          </nav>
+
+          <section class="adoption-grid" id="pet-grid"></section>
+     </main>
+
+     <script src="js/dados.js"></script>
+     <script src="js/main.js"></script>
+</body>
+
+</html>

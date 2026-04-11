@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>AuDoção - Perfil do Pet</title>
+     <link rel="stylesheet" href="style.css">
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+     <main class="profile-container">
+          <section class="pet-hero">
+               <a href="home.html" class="btn-back">← Voltar</a>
+               <img id="pet-img" src="" alt="Foto do Pet">
+          </section>
+
+          <section class="pet-details-card">
+               <div class="pet-main-info">
+                    <div class="header-info">
+                         <h1 id="pet-name">Carregando...</h1>
+                         <span id="pet-species" class="badge-species">-</span>
+                    </div>
+                    <p id="pet-location" class="location">📍 -</p>
+               </div>
+
+               <div class="pet-stats-grid">
+                    <div class="stat-item">
+                         <small>Idade</small>
+                         <strong id="pet-age">-</strong>
+                    </div>
+                    <div class="stat-item">
+                         <small>Sexo</small>
+                         <strong id="pet-sex">-</strong>
+                    </div>
+                    <div class="stat-item">
+                         <small>Porte</small>
+                         <strong id="pet-size">-</strong>
+                    </div>
+               </div>
+
+               <div class="pet-description">
+                    <h3>Sobre mim</h3>
+                    <p id="pet-desc">...</p>
+               </div>
+
+               <div class="pet-health-tags">
+                    <h3>Saúde e Comportamento</h3>
+                    <div class="tags-container" id="pet-tags">
+                    </div>
+               </div>
+
+               <button class="btn-adopt-now" id="btn-adopt-text">Quero Adotar</button>
+          </section>
+     </main>
+
+     <script src="js/dados.js"></script>
+     <script>
+          // 1. Pegar o ID da URL (?id=mia)
+          const urlParams = new URLSearchParams(window.location.search);
+          const petId = urlParams.get('id');
+
+          // 2. Procurar o pet no array que está no dados.js
+          const pet = pets.find(p => p.id === petId);
+
+          // 3. Se o pet existir, preenche os campos
+          if (pet) {
+               document.getElementById('pet-img').src = pet.img;
+               document.getElementById('pet-img').alt = `Foto de ${pet.nome}`;
+               document.getElementById('pet-name').innerText = pet.nome;
+               document.getElementById('pet-species').innerText = pet.especie;
+               document.getElementById('pet-location').innerText = `📍 Recife, PE`; // Ou adicione no dados.js
+               document.getElementById('pet-age').innerText = pet.idade;
+               document.getElementById('pet-sex').innerText = pet.sexo;
+               document.getElementById('pet-size').innerText = pet.porte;
+               document.getElementById('pet-desc').innerText = pet.descricao || "Este pet está esperando por um lar amoroso!";
+               document.getElementById('btn-adopt-text').innerText = `Quero Adotar o ${pet.nome}`;
+
+               // Gerar as tags de saúde
+               const tagsContainer = document.getElementById('pet-tags');
+               pet.tags.forEach(tag => {
+                    const span = document.createElement('span');
+                    span.className = 'tag check';
+                    span.innerText = tag;
+                    tagsContainer.appendChild(span);
+               });
+
+               document.title = `AuDoção - ${pet.nome}`;
+          } else {
+               // Caso não encontre (erro de digitação na URL), volta pra home
+               window.location.href = 'home.html';
+          }
+     </script>
+</body>
+
+</html>
