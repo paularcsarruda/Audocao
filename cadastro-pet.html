@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>AuDoção - Cadastrar Novo Pet</title>
+     <link rel="stylesheet" href="style.css">
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="admin-body">
+
+     <nav class="navbar">
+          <div class="nav-container">
+               <a href="home.html" class="logo">AuDoção <span class="admin-badge">ONG</span></a>
+               <div class="nav-user">
+                    <a href="home.html" class="btn-back-home">Voltar ao Site</a>
+               </div>
+          </div>
+     </nav>
+
+     <main class="form-container">
+          <header class="form-header">
+               <h1>Cadastrar Pet</h1>
+               <p>Preencha as informações para encontrar um novo lar.</p>
+          </header>
+
+          <form id="form-cadastro-pet" class="glass-form">
+               <div class="form-section">
+                    <h3>1. Fotos do Pet</h3>
+                    <div class="upload-container">
+                         <label for="pet-photo" class="upload-label">
+                              <div class="upload-icon">📸</div>
+                              <span>Clique para enviar fotos</span>
+                              <input type="file" id="pet-photo" accept="image/*" required>
+                         </label>
+                    </div>
+               </div>
+
+               <div class="form-section">
+                    <h3>2. Informações Básicas</h3>
+                    <div class="input-grid">
+                         <div class="input-group">
+                              <label>Nome do Pet</label>
+                              <input type="text" placeholder="Ex: Bubu" required>
+                         </div>
+                         <div class="input-group">
+                              <label>Espécie</label>
+                              <select required>
+                                   <option value="Cão">Cão</option>
+                                   <option value="Gato">Gato</option>
+                                   <option value="Outros">Outros</option>
+                              </select>
+                         </div>
+                         <div class="input-group">
+                              <label>Idade (Aprox.)</label>
+                              <input type="text" placeholder="Ex: 2 anos">
+                         </div>
+                         <div class="input-group">
+                              <label>Porte</label>
+                              <select>
+                                   <option value="Pequeno">Pequeno</option>
+                                   <option value="Médio">Médio</option>
+                                   <option value="Grande">Grande</option>
+                              </select>
+                         </div>
+                    </div>
+               </div>
+
+               <div class="form-section">
+                    <h3>3. Saúde e Comportamento</h3>
+                    <div class="checkbox-grid">
+                         <label class="check-item"><input type="checkbox"> Vacinado</label>
+                         <label class="check-item"><input type="checkbox"> Castrado</label>
+                         <label class="check-item"><input type="checkbox"> Vermifugado</label>
+                         <label class="check-item"><input type="checkbox"> Amigável com gatos</label>
+                    </div>
+                    <div class="input-group mt-20">
+                         <label>Descrição e História</label>
+                         <textarea rows="4"
+                              placeholder="Conte um pouco sobre o temperamento e a história do pet..."></textarea>
+                    </div>
+               </div>
+
+               <button type="submit" class="btn-submit">Publicar para Adoção</button>
+          </form>
+     </main>
+
+</body>
+
+</html>
