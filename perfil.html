@@ -91,19 +91,6 @@
                // Caso não encontre (erro de digitação na URL), volta pra home
                window.location.href = 'home.html';
           }
-
-          // ligação com o whatsapp
-          if (pet) {
-               const btnAdopt = document.getElementById('btn-adopt-text');
-
-               btnAdopt.addEventListener('click', () => {
-                    const mensagem = `Olá! Vi o perfil do ${pet.nome} no AuDoção e gostaria de saber mais sobre o processo de adoção.`;
-                    const linkWhatsapp = `https://wa.me/${pet.contato}?text=${encodeURIComponent(mensagem)}`;
-
-                    // Abre o WhatsApp em uma nova aba
-                    window.open(linkWhatsapp, '_blank');
-               });
-          }
      </script>
 </body>
 

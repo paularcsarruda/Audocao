@@ -114,22 +114,18 @@ body {
      left: -100px;
 }
 
+/* Lado Direito - Conteúdo */
 .hero-content {
      flex: 1;
      display: flex;
-     align-items: center;    /* Centraliza o box verticalmente */
-     justify-content: center; /* Centraliza o box horizontalmente */
+     align-items: center;
+     justify-content: center;
      padding: 4rem;
      background-color: var(--color-white);
 }
 
 .hero-content .content-box {
-     max-width: 500px;        /* Aumentei levemente para melhor leitura */
-     width: 100%;
-     display: flex;           /* Adicionado */
-     flex-direction: column;  /* Adicionado: empilha os itens */
-     align-items: center;     /* Adicionado: centraliza h1, p e botões horizontalmente */
-     text-align: center;      /* Garante que as linhas de texto fiquem no centro */
+     max-width: 450px;
 }
 
 .hero-content .content-box h1 {
@@ -137,22 +133,18 @@ body {
      color: var(--color-blue);
      line-height: 1.1;
      margin-bottom: 1.5rem;
-     width: 100%;             /* Garante que o texto use todo o espaço para centralizar */
 }
 
 .hero-content .content-box p {
      color: var(--color-text-gray);
      font-size: 1.1rem;
      margin-bottom: 2.5rem;
-     width: 100%;
 }
 
 .hero-content .content-box .actions {
      display: flex;
      flex-direction: column;
      gap: 1rem;
-     width: 100%;             /* Faz os botões respeitarem a largura do box */
-     max-width: 350px;        /* Opcional: define uma largura máxima elegante para os botões */
 }
 
 .hero-content .content-box .actions .btn {

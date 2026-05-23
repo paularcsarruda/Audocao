@@ -10,28 +10,28 @@ function carregarPets(lista) {
 
           // Estrutura do Card
           const card = `
-            <article class="pet-card">
-                <div class="pet-image">
+          <article class="pet-card">
+               <div class="pet-image">
                     <img src="${pet.img}" alt="${pet.nome}">
                     <span class="tag-status">${pet.especie}</span>
-                </div>
-                <div class="pet-info">
+               </div>
+               <div class="pet-info">
                     <h3>${pet.nome}</h3>
-                    <p>${pet.sexo} • ${pet.idade} • ${pet.porte}</p>
+                    <p>${pet.sexo} • ${pet.idade} • ${pet.porte} • ${pet.localizacao}</p>
                     <div class="pet-tags">${tagsHtml}</div>
                     <a href="perfil.html?id=${pet.id}" class="btn-details" style="text-align: center; display: block; text-decoration: none;">Ver Perfil</a>
-                </div>
-            </article>
-        `;
+               </div>
+          </article>
+     `;
 
           petGrid.innerHTML += card;
      });
 }
 
-// Inicializa a página com todos os pets
+// Inicializa a página 
 carregarPets(pets);
 
-// Lógica básica de filtro (Opcional, mas recomendado para ADS)
+
 document.querySelectorAll('.filter-btn').forEach(botao => {
      botao.addEventListener('click', (e) => {
           // Estilo visual dos botões

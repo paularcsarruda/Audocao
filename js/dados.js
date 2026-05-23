@@ -5,9 +5,10 @@ const pets = [
           especie: 'Cão',
           idade: '2 anos',
           sexo: 'Macho',
-          porte: 'Médio',
+          porte: 'Grande',
+          localizacao: 'São Paulo - SP',
           img: 'src/dog1.webp',
-          tags: ['Vacinado', 'Castrado']
+          tags: ['Vacinado', 'Castrado', 'Vermifugado']
      },
      {
           id: 'pipoca',
@@ -15,9 +16,10 @@ const pets = [
           especie: 'Cão',
           idade: '5 meses',
           sexo: 'Fêmea',
-          porte: 'Pequeno',
+          porte: 'Grande',
+          localizacao: 'Rio de Janeiro - RJ',
           img: 'src/dog2.webp',
-          tags: ['Vacinada']
+          tags: ['Vacinada', 'Castrada', 'Vermifugada']
      },
      {
           id: 'mia',
@@ -26,8 +28,9 @@ const pets = [
           idade: '1 ano',
           sexo: 'Fêmea',
           porte: 'Pequeno',
+          localizacao: 'Belo Horizonte - MG',
           img: 'src/cat1.webp',
-          tags: ['Castrada']
+          tags: ['Castrada', 'Vermifugada']
      },
      {
           id: 'pompom',
@@ -36,7 +39,8 @@ const pets = [
           idade: '8 meses',
           sexo: 'Fêmea',
           porte: 'Coelho',
+          localizacao: 'Curitiba - PR',
           img: 'src/rabbit1.png',
-          tags: ['Silvestre']
+          tags: ['Silvestre', 'Vacinada', 'Vermifugada']
      }
 ];

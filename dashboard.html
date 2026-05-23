@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patinhas — Painel da ONG</title>
+  <meta name="description" content="Painel administrativo para ONGs de adoção de animais — gestão de pets, candidatos e doações." />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Lucide icons via CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="app">
+
+    <!-- ============== SIDEBAR ============== -->
+    <aside class="sidebar">
+      <div class="sidebar__header">
+        <div class="sidebar__logo"><i data-lucide="paw-print"></i></div>
+        <div class="sidebar__brand">
+          <span class="name">Patinhas</span>
+          <span class="sub">Painel da ONG</span>
+        </div>
+      </div>
+
+      <div class="sidebar__content">
+        <div class="sidebar__group">
+          <div class="label">Principal</div>
+          <nav class="sidebar__nav">
+            <a href="#" class="sidebar__item is-active">
+              <i data-lucide="layout-dashboard" class="icon"></i><span>Visão geral</span><span class="dot"></span>
+            </a>
+            <a href="#" class="sidebar__item"><i data-lucide="paw-print" class="icon"></i><span>Animais</span></a>
+            <a href="#" class="sidebar__item"><i data-lucide="heart-handshake" class="icon"></i><span>Adoções</span></a>
+            <a href="#" class="sidebar__item"><i data-lucide="users" class="icon"></i><span>Candidatos</span></a>
+          </nav>
+        </div>
+
+        <div class="sidebar__group">
+          <div class="label">Comunidade</div>
+          <nav class="sidebar__nav">
+            <a href="#" class="sidebar__item"><i data-lucide="calendar-days" class="icon"></i><span>Eventos</span></a>
+            <a href="#" class="sidebar__item"><i data-lucide="gift" class="icon"></i><span>Doações</span></a>
+            <a href="#" class="sidebar__item"><i data-lucide="hand-heart" class="icon"></i><span>Voluntários</span></a>
+          </nav>
+        </div>
+
+        <div class="sidebar__capacity">
+          <div class="head"><span class="ping pulse"></span> Capacidade</div>
+          <p class="num">23 <span>/ 30 vagas</span></p>
+          <div class="bar"><i></i></div>
+        </div>
+      </div>
+
+      <div class="sidebar__footer">
+        <a href="#" class="sidebar__item"><i data-lucide="settings" class="icon"></i><span>Configurações</span></a>
+        <a href="#" class="sidebar__item"><i data-lucide="log-out" class="icon"></i><span>Sair</span></a>
+      </div>
+    </aside>
+
+    <!-- ============== MAIN ============== -->
+    <div class="main-area">
+
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <button class="topbar__toggle" aria-label="Menu"><i data-lucide="panel-left"></i></button>
+
+        <div class="topbar__search">
+          <i data-lucide="search" class="icon"></i>
+          <input type="text" placeholder="Buscar pets, candidatos, eventos…" />
+        </div>
+
+        <div class="topbar__actions">
+          <button class="btn btn--primary"><i data-lucide="plus"></i><span>Cadastrar pet</span></button>
+          <button class="topbar__bell" aria-label="Notificações">
+            <i data-lucide="bell"></i><span class="dot"></span>
+          </button>
+          <div class="topbar__profile">
+            <div class="avatar">AP</div>
+            <div class="meta">
+              <div class="org">Amigos das Patas</div>
+              <div class="tag">ONG verificada</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- DASHBOARD -->
+      <main class="main">
+
+        <!-- HERO -->
+        <section class="hero animate-fade">
+          <div>
+            <p class="date">Sexta, 1 de maio</p>
+            <h1>Olá, <span class="highlight">Amigos das Patas</span> 🐾</h1>
+            <p class="summary">
+              Você tem <strong>3 novas candidaturas</strong> e <strong>1 adoção concluída</strong> ontem.
+            </p>
+          </div>
+          <div class="urgency"><span class="ping pulse"></span> Modo urgência: 2 pets idosos</div>
+        </section>
+
+        <!-- KPIs -->
+        <section class="kpis">
+          <article class="stat">
+            <div class="stat__head">
+              <div>
+                <p class="stat__label">Animais disponíveis</p>
+                <p class="stat__value">48</p>
+                <p class="stat__hint">23 cães · 25 gatos</p>
+              </div>
+              <div class="stat__icon"><i data-lucide="paw-print"></i></div>
+            </div>
+            <div class="stat__delta">
+              <span class="pill up"><i data-lucide="trending-up"></i>+6%</span>
+              <span class="vs">vs. mês anterior</span>
+            </div>
+          </article>
+
+          <article class="stat">
+            <div class="stat__head">
+              <div>
+                <p class="stat__label">Em processo</p>
+                <p class="stat__value">12</p>
+                <p class="stat__hint">aguardando entrevista</p>
+              </div>
+              <div class="stat__icon"><i data-lucide="users"></i></div>
+            </div>
+            <div class="stat__delta">
+              <span class="pill up"><i data-lucide="trending-up"></i>+18%</span>
+              <span class="vs">vs. mês anterior</span>
+            </div>
+          </article>
+
+          <article class="stat stat--accent">
+            <div class="stat__head">
+              <div>
+                <p class="stat__label">Adoções no mês</p>
+                <p class="stat__value">21</p>
+              </div>
+              <div class="stat__icon"><i data-lucide="heart-handshake"></i></div>
+            </div>
+            <div class="stat__delta">
+              <span class="pill"><i data-lucide="trending-up"></i>+24%</span>
+              <span class="vs">vs. mês anterior</span>
+            </div>
+          </article>
+
+          <article class="stat">
+            <div class="stat__head">
+              <div>
+                <p class="stat__label">Taxa de sucesso</p>
+                <p class="stat__value">86%</p>
+                <p class="stat__hint">últimos 30 dias</p>
+              </div>
+              <div class="stat__icon"><i data-lucide="trending-up"></i></div>
+            </div>
+            <div class="stat__delta">
+              <span class="pill down"><i data-lucide="trending-down"></i>-3%</span>
+              <span class="vs">vs. mês anterior</span>
+            </div>
+          </article>
+        </section>
+
+        <!-- GRID PRINCIPAL -->
+        <section class="grid-main">
+          <div class="col-stack">
+
+            <!-- CHART -->
+            <div class="panel">
+              <div class="panel__head">
+                <div>
+                  <h3>Adoções no semestre</h3>
+                  <p>Comparativo de candidaturas e adoções concluídas</p>
+                </div>
+                <div class="panel__legend">
+                  <span><i style="background: hsl(222,60%,16%)"></i> Adoções</span>
+                  <span><i style="background: hsl(45,96%,56%)"></i> Candidaturas</span>
+                </div>
+              </div>
+
+              <div class="chart">
+                <svg viewBox="0 0 600 240" preserveAspectRatio="none">
+                  <defs>
+                    <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
+                      <stop offset="0%" stop-color="hsl(222,60%,16%)" stop-opacity="0.35"/>
+                      <stop offset="100%" stop-color="hsl(222,60%,16%)" stop-opacity="0"/>
+                    </linearGradient>
+                    <linearGradient id="g2" x1="0" x2="0" y1="0" y2="1">
+                      <stop offset="0%" stop-color="hsl(45,96%,56%)" stop-opacity="0.45"/>
+                      <stop offset="100%" stop-color="hsl(45,96%,56%)" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+
+                  <g class="grid">
+                    <line x1="0" y1="40"  x2="600" y2="40"/>
+                    <line x1="0" y1="100" x2="600" y2="100"/>
+                    <line x1="0" y1="160" x2="600" y2="160"/>
+                    <line x1="0" y1="220" x2="600" y2="220"/>
+                  </g>
+
+                  <!-- Candidaturas (amarelo) -->
+                  <path d="M0,140 L120,110 L240,125 L360,75 L480,45 L600,20 L600,240 L0,240 Z" fill="url(#g2)"/>
+                  <path d="M0,140 L120,110 L240,125 L360,75 L480,45 L600,20" stroke="hsl(45,96%,56%)" stroke-width="2.5" fill="none"/>
+
+                  <!-- Adoções (azul) -->
+                  <path d="M0,200 L120,180 L240,190 L360,160 L480,140 L600,120 L600,240 L0,240 Z" fill="url(#g1)"/>
+                  <path d="M0,200 L120,180 L240,190 L360,160 L480,140 L600,120" stroke="hsl(222,60%,16%)" stroke-width="2.5" fill="none"/>
+
+                  <g class="axis">
+                    <text x="0"   y="235">Nov</text>
+                    <text x="120" y="235">Dez</text>
+                    <text x="240" y="235">Jan</text>
+                    <text x="360" y="235">Fev</text>
+                    <text x="480" y="235">Mar</text>
+                    <text x="580" y="235">Abr</text>
+                  </g>
+                </svg>
+              </div>
+            </div>
+
+            <!-- DUO: Pets atenção + Candidatos -->
+            <div class="duo">
+              <div class="panel">
+                <div class="panel__head">
+                  <div>
+                    <h3>Precisam de atenção</h3>
+                    <p>Pets há mais tempo aguardando</p>
+                  </div>
+                  <button class="btn btn--ghost btn--sm">Ver todos <i data-lucide="chevron-right"></i></button>
+                </div>
+
+                <ul class="pet-list">
+                  <li>
+                    <div class="avatar">🐕</div>
+                    <div class="info">
+                      <div class="name">Thor <span class="badge--urgent">Urgente</span></div>
+                      <div class="breed">SRD · 4 anos</div>
+                    </div>
+                    <div class="days"><div class="num">142</div><div class="lbl">dias</div></div>
+                    <button class="btn--soft btn btn--icon"><i data-lucide="sparkles"></i></button>
+                  </li>
+                  <li>
+                    <div class="avatar">🐈</div>
+                    <div class="info">
+                      <div class="name">Mia</div>
+                      <div class="breed">Siamês · 7 anos</div>
+                    </div>
+                    <div class="days"><div class="num">98</div><div class="lbl">dias</div></div>
+                    <button class="btn--soft btn btn--icon"><i data-lucide="sparkles"></i></button>
+                  </li>
+                  <li>
+                    <div class="avatar">🐶</div>
+                    <div class="info">
+                      <div class="name">Bento</div>
+                      <div class="breed">Pinscher · 9 anos</div>
+                    </div>
+                    <div class="days"><div class="num">87</div><div class="lbl">dias</div></div>
+                    <button class="btn--soft btn btn--icon"><i data-lucide="sparkles"></i></button>
+                  </li>
+                  <li>
+                    <div class="avatar">🐩</div>
+                    <div class="info">
+                      <div class="name">Luna</div>
+                      <div class="breed">SRD · 2 anos</div>
+                    </div>
+                    <div class="days"><div class="num">64</div><div class="lbl">dias</div></div>
+                    <button class="btn--soft btn btn--icon"><i data-lucide="sparkles"></i></button>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="panel">
+                <div class="panel__head">
+                  <div>
+                    <h3>Fila de candidatos</h3>
+                    <p>Aprovação pendente</p>
+                  </div>
+                  <button class="btn btn--ghost btn--sm">Ver fila <i data-lucide="chevron-right"></i></button>
+                </div>
+
+                <div class="queue">
+                  <div class="item">
+                    <div class="ava">CR</div>
+                    <div class="info">
+                      <div class="top">Carla Ribeiro</div>
+                      <div class="pet">Quer adotar <strong>Mia</strong> · 2h atrás</div>
+                    </div>
+                    <div class="actions">
+                      <button class="btn-i" title="Mensagem"><i data-lucide="message-circle"></i></button>
+                      <button class="btn-i no" title="Recusar"><i data-lucide="x"></i></button>
+                      <button class="btn-i ok" title="Aprovar"><i data-lucide="check"></i></button>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="ava">PM</div>
+                    <div class="info">
+                      <div class="top">Pedro Matos</div>
+                      <div class="pet">Quer adotar <strong>Thor</strong> · 5h atrás</div>
+                    </div>
+                    <div class="actions">
+                      <button class="btn-i"><i data-lucide="message-circle"></i></button>
+                      <button class="btn-i no"><i data-lucide="x"></i></button>
+                      <button class="btn-i ok"><i data-lucide="check"></i></button>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="ava">JS</div>
+                    <div class="info">
+                      <div class="top">Júlia Souza</div>
+                      <div class="pet">Quer adotar <strong>Luna</strong> · 1d atrás</div>
+                    </div>
+                    <div class="actions">
+                      <button class="btn-i"><i data-lucide="message-circle"></i></button>
+                      <button class="btn-i no"><i data-lucide="x"></i></button>
+                      <button class="btn-i ok"><i data-lucide="check"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ASIDE -->
+          <aside class="aside">
+            <div class="success-card">
+              <span class="tag">★ História de sucesso</span>
+              <h3>Bidu encontrou seu lar!</h3>
+              <p>Após 8 meses de espera, foi adotado pela família Almeida.</p>
+              <div class="pet">
+                <div class="img">🐶</div>
+                <div class="who">Bidu <span>Adotado em 28/abr</span></div>
+              </div>
+            </div>
+
+            <div class="donations">
+              <h3>Campanha do mês</h3>
+              <p class="sub">Castração coletiva · 50 animais</p>
+              <div class="meta">
+                <span class="v">R$ 7.450</span>
+                <span class="g">meta R$ 12.000</span>
+              </div>
+              <div class="progress"><i style="width: 62%"></i></div>
+              <div class="donors">
+                <div class="stack">
+                  <div class="d">JM</div><div class="d">PA</div><div class="d">LC</div><div class="d">+</div>
+                </div>
+                <span>+ 38 doadores este mês</span>
+              </div>
+            </div>
+
+            <div class="events">
+              <h3>Próximos eventos</h3>
+              <ul>
+                <li>
+                  <div class="date"><div class="d">04</div><div class="m">mai</div></div>
+                  <div class="info">
+                    <div class="t">Feira de adoção</div>
+                    <div class="s">Parque Ibirapuera · 10h</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="date"><div class="d">11</div><div class="m">mai</div></div>
+                  <div class="info">
+                    <div class="t">Mutirão de vacinação</div>
+                    <div class="s">Sede ONG · 9h</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="date"><div class="d">18</div><div class="m">mai</div></div>
+                  <div class="info">
+                    <div class="t">Bazar beneficente</div>
+                    <div class="s">Centro comunitário · 14h</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </aside>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <script>lucide.createIcons();</script>
+</body>
+</html>
