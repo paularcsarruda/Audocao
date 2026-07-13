@@ -1679,4 +1679,181 @@ input {
   }
 }
 
+.about-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.about-hero {
+  text-align: center;
+  padding: 4rem 1rem 3rem;
+}
+.about-hero h1 {
+  color: var(--color-blue);
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+.about-hero p {
+  color: var(--color-text-gray);
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.about-section {
+  padding: 2rem 0 4rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-grid .image-box {
+  background-color: var(--color-yellow);
+  border-radius: 30px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about-grid .image-box img {
+  width: 100%;
+  max-width: 400px;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.1));
+}
+
+.about-grid .text-box h2 {
+  color: var(--color-blue);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+.about-grid .text-box p {
+  color: var(--color-text-gray);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.doar-container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.doar-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.doar-header h1 {
+  color: var(--color-blue);
+  font-size: 2.2rem;
+  margin-bottom: 0.75rem;
+}
+.doar-header p {
+  color: var(--color-text-gray);
+  font-size: 1.05rem;
+}
+
+.doar-form {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 30px;
+  padding: 2.5rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+.doar-form .input-group {
+  margin-bottom: 1.25rem;
+}
+.doar-form .input-group label {
+  display: block;
+  color: var(--color-blue);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+.doar-form .input-group input,
+.doar-form .input-group select,
+.doar-form .input-group textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1.5px solid rgba(18, 26, 109, 0.15);
+  border-radius: 12px;
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+.doar-form .input-group input:focus,
+.doar-form .input-group select:focus,
+.doar-form .input-group textarea:focus {
+  outline: none;
+  border-color: var(--color-blue);
+}
+.doar-form .input-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+.doar-form .btn-primary {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  background-color: var(--color-blue);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.doar-form .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(18, 26, 109, 0.2);
+}
+
+.doar-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+.doar-footer a {
+  color: var(--color-blue);
+  font-weight: 600;
+  text-decoration: none;
+}
+.doar-footer a:hover {
+  text-decoration: underline;
+}
+
+.form-error {
+  color: #d32f2f;
+  font-size: 0.85rem;
+  margin-top: 0.35rem;
+  display: none;
+}
+.form-error.visible {
+  display: block;
+}
+
+.form-success {
+  background: rgba(76, 175, 80, 0.1);
+  color: #2e7d32;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 1rem;
+  display: none;
+}
+.form-success.visible {
+  display: block;
+}
+
 /*# sourceMappingURL=style.css.map */

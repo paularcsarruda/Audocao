@@ -50,7 +50,7 @@ audocao/
     ```
 
 3.  **Abra o navegador**:
-    Basta abrir o arquivo `home.html` no seu navegador de preferência.
+    Basta abrir o arquivo `index.html` no seu navegador de preferência.
 
 ## 🛠️ Funcionalidades em Desenvolvimento
 

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>AuDoção - Quero Doar</title>
+     <link rel="stylesheet" href="style.css">
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="auth-page">
+
+     <main class="doar-container">
+          <header class="doar-header">
+               <h1>Quero Doar um Pet</h1>
+               <p>Preencha os dados abaixo para cadastrar um animal que precisa de um lar.</p>
+          </header>
+
+          <form class="doar-form" id="doar-form">
+               <div class="form-success" id="doar-success">Cadastro enviado com sucesso! Em breve entraremos em contato.</div>
+
+               <div class="input-group">
+                    <label for="nome-pet">Nome do Pet</label>
+                    <input type="text" id="nome-pet" placeholder="Ex: Thor" required>
+               </div>
+
+               <div class="input-group">
+                    <label for="especie">Espécie</label>
+                    <select id="especie" required>
+                         <option value="">Selecione</option>
+                         <option value="Cão">Cão</option>
+                         <option value="Gato">Gato</option>
+                         <option value="Outros">Outros</option>
+                    </select>
+               </div>
+
+               <div class="input-group">
+                    <label for="idade">Idade</label>
+                    <input type="text" id="idade" placeholder="Ex: 2 anos" required>
+               </div>
+
+               <div class="input-group">
+                    <label for="localizacao">Localização</label>
+                    <input type="text" id="localizacao" placeholder="Ex: Recife - PE" required>
+               </div>
+
+               <div class="input-group">
+                    <label for="descricao">Descrição</label>
+                    <textarea id="descricao" placeholder="Conte um pouco sobre o pet..." required></textarea>
+               </div>
+
+               <div class="input-group">
+                    <label for="contato">Seu e-mail para contato</label>
+                    <input type="email" id="contato" placeholder="seu@email.com" required>
+                    <span class="form-error" id="contato-error">Informe um e-mail válido.</span>
+               </div>
+
+               <button type="submit" class="btn btn-primary">Enviar Cadastro</button>
+          </form>
+
+          <div class="doar-footer">
+               <a href="index.html">← Voltar para a página inicial</a>
+          </div>
+     </main>
+
+     <script src="js/auth.js"></script>
+</body>
+
+</html>

@@ -34,11 +34,11 @@ carregarPets(pets);
 
 document.querySelectorAll('.filter-btn').forEach(botao => {
      botao.addEventListener('click', (e) => {
-          // Estilo visual dos botões
+          const btn = e.currentTarget;
           document.querySelector('.filter-btn.active').classList.remove('active');
-          e.target.classList.add('active');
+          btn.classList.add('active');
 
-          const filtro = e.target.getAttribute('data-filter');
+          const filtro = btn.getAttribute('data-filter');
 
           if (filtro === "Todos") {
                carregarPets(pets);
