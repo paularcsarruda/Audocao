@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>AuDoção - Cadastro de ONG</title>
+     <link rel="stylesheet" href="style.css">
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="auth-page">
+
+     <main class="auth-container">
+          <section class="auth-card">
+               <div class="auth-header">
+                    <h2 class="logo">AuDoção</h2>
+                    <p>Cadastre sua ONG e comece a divulgar pets para adoção.</p>
+               </div>
+
+               <form class="auth-form" id="form-cadastro-ong">
+                    <div class="input-group">
+                         <label for="nome-ong">Nome da ONG</label>
+                         <input type="text" id="nome-ong" placeholder="Ex: Amigos das Patas" required>
+                    </div>
+
+                    <div class="input-group">
+                         <label for="cnpj">CNPJ</label>
+                         <input type="text" id="cnpj" placeholder="00.000.000/0000-00" required>
+                    </div>
+
+                    <div class="input-group">
+                         <label for="responsavel">Responsável</label>
+                         <input type="text" id="responsavel" placeholder="Nome do responsável" required>
+                    </div>
+
+                    <div class="input-group">
+                         <label for="email">E-mail</label>
+                         <input type="email" id="email" placeholder="ong@email.com" required>
+                    </div>
+
+                    <div class="input-group">
+                         <label for="password">Senha</label>
+                         <input type="password" id="password" placeholder="Mínimo 8 caracteres" minlength="8" required>
+                    </div>
+
+                    <div class="input-group">
+                         <label for="confirm-password">Confirmar Senha</label>
+                         <input type="password" id="confirm-password" placeholder="Repita sua senha" minlength="8" required>
+                    </div>
+
+                    <p class="form-error" id="form-error"></p>
+
+                    <button type="submit" class="btn btn-primary">Cadastrar ONG</button>
+               </form>
+
+               <div class="auth-footer">
+                    <p>Quer adotar em vez disso? <a href="cadastro.html">Crie uma conta de adotante</a></p>
+                    <p>Já tem uma conta de ONG? <a href="login.html">Faça login</a></p>
+               </div>
+          </section>
+     </main>
+
+     <script>
+          const form = document.getElementById('form-cadastro-ong');
+          const errorEl = document.getElementById('form-error');
+
+          form.addEventListener('submit', (event) => {
+               event.preventDefault();
+               errorEl.textContent = '';
+
+               const senha = document.getElementById('password').value;
+               const confirmarSenha = document.getElementById('confirm-password').value;
+
+               if (senha !== confirmarSenha) {
+                    errorEl.textContent = 'As senhas não coincidem. Tente novamente.';
+                    return;
+               }
+
+               // TODO: enviar os dados para o backend quando a API estiver disponível.
+               // Por enquanto, redireciona direto para o painel da ONG.
+               window.location.href = 'dashboard.html';
+          });
+     </script>
+
+</body>
+
+</html>

@@ -6,7 +6,7 @@ const pets = [
           idade: '2 anos',
           sexo: 'Macho',
           porte: 'Grande',
-          localizacao: 'São Paulo - SP',
+          localizacao: 'Olinda - PE',
           img: 'src/dog1.webp',
           tags: ['Vacinado', 'Castrado', 'Vermifugado']
      },
@@ -17,7 +17,7 @@ const pets = [
           idade: '5 meses',
           sexo: 'Fêmea',
           porte: 'Grande',
-          localizacao: 'Rio de Janeiro - RJ',
+          localizacao: 'Recife - PE',
           img: 'src/dog2.webp',
           tags: ['Vacinada', 'Castrada', 'Vermifugada']
      },
@@ -28,7 +28,7 @@ const pets = [
           idade: '1 ano',
           sexo: 'Fêmea',
           porte: 'Pequeno',
-          localizacao: 'Belo Horizonte - MG',
+          localizacao: 'Jaboatão - PE',
           img: 'src/cat1.webp',
           tags: ['Castrada', 'Vermifugada']
      },
@@ -39,8 +39,30 @@ const pets = [
           idade: '8 meses',
           sexo: 'Fêmea',
           porte: 'Coelho',
-          localizacao: 'Curitiba - PR',
+          localizacao: 'Recife - PE',
           img: 'src/rabbit1.png',
           tags: ['Silvestre', 'Vacinada', 'Vermifugada']
+     },
+     {
+          id: 'Caramelo',
+          nome: 'Caramelo',
+          especie: 'Cão',
+          idade: '5 meses',
+          sexo: 'Macho',
+          porte: 'Médio',
+          localizacao: 'Recife - PE',
+          img: 'src/caramelo.jpeg',
+          tags: ['Vacinado', 'Vermifugado', 'Castrado']
+     },
+     {
+          id: 'Tom',
+          nome: 'Tom',
+          especie: 'Outros',
+          idade: '10 meses',
+          sexo: 'Macho',
+          porte: 'pequeno',
+          localizacao: 'Recife - PE',
+          img: 'src/tomtom.jpg',
+          tags: ['Vacinado']
      }
 ];

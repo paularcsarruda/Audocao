@@ -70,7 +70,7 @@
         </div>
 
         <div class="topbar__actions">
-          <button class="btn btn--primary"><i data-lucide="plus"></i><span>Cadastrar pet</span></button>
+          <button class="btn btn--primary" id="btn-open-add-pet"><i data-lucide="plus"></i><span>Cadastrar pet</span></button>
           <button class="topbar__bell" aria-label="Notificações">
             <i data-lucide="bell"></i><span class="dot"></span>
           </button>
@@ -105,8 +105,8 @@
             <div class="stat__head">
               <div>
                 <p class="stat__label">Animais disponíveis</p>
-                <p class="stat__value">48</p>
-                <p class="stat__hint">23 cães · 25 gatos</p>
+                <p class="stat__value" id="kpi-total-pets">48</p>
+                <p class="stat__hint" id="kpi-pets-hint">23 cães · 25 gatos</p>
               </div>
               <div class="stat__icon"><i data-lucide="paw-print"></i></div>
             </div>
@@ -229,7 +229,7 @@
                   <button class="btn btn--ghost btn--sm">Ver todos <i data-lucide="chevron-right"></i></button>
                 </div>
 
-                <ul class="pet-list">
+                <ul class="pet-list" id="pet-list">
                   <li>
                     <div class="avatar">🐕</div>
                     <div class="info">
@@ -381,6 +381,143 @@
     </div>
   </div>
 
-  <script>lucide.createIcons();</script>
+  <!-- ============== MODAL: CADASTRAR PET ============== -->
+  <div class="modal-overlay" id="modal-add-pet">
+    <div class="modal">
+      <div class="modal__head">
+        <div>
+          <h3>Cadastrar novo pet</h3>
+          <p>Preencha os dados do animal para disponibilizá-lo para adoção.</p>
+        </div>
+        <button class="modal__close" id="btn-close-add-pet" aria-label="Fechar"><i data-lucide="x"></i></button>
+      </div>
+
+      <form class="modal-form" id="form-add-pet">
+        <div class="input-group">
+          <label for="pet-nome">Nome do pet</label>
+          <input type="text" id="pet-nome" placeholder="Ex: Nina" required>
+        </div>
+
+        <div class="field-row">
+          <div class="input-group">
+            <label for="pet-especie">Espécie</label>
+            <select id="pet-especie" required>
+              <option value="Cão">Cão</option>
+              <option value="Gato">Gato</option>
+              <option value="Outros">Outros</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label for="pet-raca">Raça</label>
+            <input type="text" id="pet-raca" placeholder="SRD, Siamês…" required>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="input-group">
+            <label for="pet-idade">Idade</label>
+            <input type="text" id="pet-idade" placeholder="Ex: 2 anos" required>
+          </div>
+          <div class="input-group">
+            <label for="pet-sexo">Sexo</label>
+            <select id="pet-sexo" required>
+              <option value="Fêmea">Fêmea</option>
+              <option value="Macho">Macho</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="pet-porte">Porte</label>
+          <select id="pet-porte" required>
+            <option value="Pequeno">Pequeno</option>
+            <option value="Médio">Médio</option>
+            <option value="Grande">Grande</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="pet-desc">Descrição</label>
+          <textarea id="pet-desc" placeholder="Conte um pouco sobre o temperamento e a história do pet"></textarea>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn btn--ghost" id="btn-cancel-add-pet">Cancelar</button>
+          <button type="submit" class="btn btn--primary"><i data-lucide="check"></i><span>Cadastrar pet</span></button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    // ---------- Modal: cadastrar pet ----------
+    const modal = document.getElementById('modal-add-pet');
+    const btnOpen = document.getElementById('btn-open-add-pet');
+    const btnClose = document.getElementById('btn-close-add-pet');
+    const btnCancel = document.getElementById('btn-cancel-add-pet');
+    const form = document.getElementById('form-add-pet');
+    const petList = document.getElementById('pet-list');
+    const kpiTotal = document.getElementById('kpi-total-pets');
+    const kpiHint = document.getElementById('kpi-pets-hint');
+
+    const especieIcon = { 'Cão': '🐶', 'Gato': '🐱', 'Outros': '🐾' };
+
+    function openModal() {
+      modal.classList.add('is-open');
+      document.getElementById('pet-nome').focus();
+    }
+    function closeModal() {
+      modal.classList.remove('is-open');
+      form.reset();
+    }
+
+    btnOpen.addEventListener('click', openModal);
+    btnClose.addEventListener('click', closeModal);
+    btnCancel.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+    // Mantém a contagem de cães/gatos/outros para o hint do KPI
+    const counts = { 'Cão': 23, 'Gato': 25, 'Outros': 0 };
+
+    function updateKpi() {
+      const total = counts['Cão'] + counts['Gato'] + counts['Outros'];
+      kpiTotal.textContent = total;
+      const partes = [`${counts['Cão']} cães`, `${counts['Gato']} gatos`];
+      if (counts['Outros'] > 0) partes.push(`${counts['Outros']} outros`);
+      kpiHint.textContent = partes.join(' · ');
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const nome = document.getElementById('pet-nome').value.trim();
+      const especie = document.getElementById('pet-especie').value;
+      const raca = document.getElementById('pet-raca').value.trim();
+      const idade = document.getElementById('pet-idade').value.trim();
+
+      // Atualiza os KPIs
+      counts[especie] = (counts[especie] || 0) + 1;
+      updateKpi();
+
+      // Adiciona o pet no topo da lista "Precisam de atenção" com uma badge "Novo"
+      const li = document.createElement('li');
+      li.innerHTML = `
+        <div class="avatar">${especieIcon[especie] || '🐾'}</div>
+        <div class="info">
+          <div class="name">${nome} <span class="badge--new">Novo</span></div>
+          <div class="breed">${raca} · ${idade}</div>
+        </div>
+        <div class="days"><div class="num">0</div><div class="lbl">dias</div></div>
+        <button class="btn--soft btn btn--icon"><i data-lucide="sparkles"></i></button>
+      `;
+      petList.prepend(li);
+      lucide.createIcons();
+
+      closeModal();
+    });
+  </script>
 </body>
 </html>

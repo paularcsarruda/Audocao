@@ -24,20 +24,35 @@ body {
 
 /* Navbar */
 .navbar {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem 5%;
-  z-index: 10;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%;
+    z-index: 10;
 }
 
-.navbar .logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--color-blue);
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    text-decoration: none;
+    color: var(--color-blue);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.brand-logo-full {
+    width: 65px;
+    height: auto;
+}
+
+.brand-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-blue);
 }
 
 .navbar .nav-links {
@@ -68,7 +83,7 @@ body {
   color: var(--color-white);
 }
 
-/* Layout Principal (Hero) */
+/* Layout Principal (Hero) - index */
 .hero-container {
   display: flex;
   height: 100vh;
@@ -95,6 +110,7 @@ body {
   width: 70%;
   z-index: 2;
   transition: transform 0.5s ease;
+  margin-top: 200px;
 }
 
 .hero-image .image-wrapper:hover {
@@ -135,12 +151,14 @@ body {
   color: var(--color-blue);
   line-height: 1.1;
   margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 .hero-content .content-box p {
-  color: var(--color-text-gray);
-  font-size: 1.1rem;
-  margin-bottom: 2.5rem;
+    max-width: 420px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+    text-align: center;
 }
 
 .hero-content .content-box .actions {
@@ -157,6 +175,22 @@ body {
   cursor: pointer;
   transition: var(--transition);
   border: none;
+}
+
+.hero-content .content-box .actions .hero-btn {
+    width: 100%;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1.2rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
 }
 
 .hero-content .content-box .actions .btn-primary {
@@ -186,6 +220,21 @@ body {
   text-align: center;
   color: #aaa;
   font-size: 0.9rem;
+}
+
+.paw {
+  display: inline-block;
+  animation: pawPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes pawPulse {
+  0%, 100% {
+    transform: scale(1) rotate(0);
+  }
+
+  50% {
+    transform: scale(1.2) rotate(-8deg);
+  }
 }
 
 /* Login & Auth Pages */
@@ -298,11 +347,23 @@ body {
   transform: translateY(-2px);
 }
 
+.form-error {
+  color: #D93025;
+  font-size: 0.85rem;
+  text-align: center;
+  min-height: 1.2em;
+  margin-top: -0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .auth-footer {
   margin-top: 2rem;
   text-align: center;
   font-size: 0.9rem;
   color: var(--color-text-gray);
+}
+.auth-footer p + p {
+  margin-top: 0.5rem;
 }
 .auth-footer a {
   color: var(--color-blue);
@@ -364,6 +425,8 @@ body {
 .auth-form .btn-primary:hover {
   transform: scale(1.02);
 }
+
+/* Home Page */
 
 .home-container {
   padding: 2rem;
@@ -1373,6 +1436,16 @@ input {
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
+.pet-list .badge--new {
+  background: hsla(152, 56%, 40%, 0.12);
+  color: var(--success);
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
 .pet-list .days {
   text-align: right;
 }
@@ -1677,6 +1750,108 @@ input {
   .hero h1 {
     font-size: 1.6rem;
   }
+}
+
+/* ===== _modal.scss (cadastro de pet) ===== */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: hsla(222, 47%, 11%, 0.45);
+  backdrop-filter: blur(2px);
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 1000;
+}
+.modal-overlay.is-open {
+  display: flex;
+}
+.modal {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 460px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 1.75rem;
+}
+.modal__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+.modal__head h3 {
+  font-size: 1.15rem;
+  color: var(--foreground);
+}
+.modal__head p {
+  font-size: 0.85rem;
+  color: var(--muted-foreground);
+  margin-top: 2px;
+}
+.modal__close {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  color: var(--muted-foreground);
+  flex-shrink: 0;
+}
+.modal__close:hover {
+  background: var(--muted);
+  color: var(--foreground);
+}
+.modal-form .field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.modal-form label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin-bottom: 0.4rem;
+}
+.modal-form .input-group {
+  margin-bottom: 1rem;
+}
+.modal-form input,
+.modal-form select,
+.modal-form textarea {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  border-radius: 0.6rem;
+  border: 1px solid var(--border);
+  background: var(--background);
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--foreground);
+  outline: none;
+  transition: var(--transition);
+}
+.modal-form input:focus,
+.modal-form select:focus,
+.modal-form textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px hsla(222, 60%, 16%, 0.08);
+}
+.modal-form textarea {
+  resize: vertical;
+  min-height: 70px;
+}
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+.modal-actions .btn--ghost {
+  background: var(--muted);
 }
 
 /*# sourceMappingURL=style.css.map */
