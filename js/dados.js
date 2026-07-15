@@ -37,11 +37,11 @@ const pets = [
           nome: 'Pompom',
           especie: 'Outros',
           idade: '8 meses',
-          sexo: 'Fêmea',
-          porte: 'Coelho',
+          sexo: 'Macho',
+          porte: 'pequeno',
           localizacao: 'Recife - PE',
           img: 'src/rabbit1.png',
-          tags: ['Silvestre', 'Vacinada', 'Vermifugada']
+          tags: ['Silvestre', 'Vacinado', 'Vermifugado']
      },
      {
           id: 'Caramelo',
@@ -64,5 +64,16 @@ const pets = [
           localizacao: 'Recife - PE',
           img: 'src/tomtom.jpg',
           tags: ['Vacinado']
+     },
+      {
+          id: 'Belinha',
+          nome: 'Belinha',
+          especie: 'Gato',
+          idade: '2 meses',
+          sexo: 'Fêmea',
+          porte: 'pequeno',
+          localizacao: 'Recife - PE',
+          img: 'src/belinha.jpeg',
+          tags: ['Vacinada', 'Vermifugada']
      }
 ];
