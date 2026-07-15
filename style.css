@@ -109,7 +109,7 @@ body {
 }
 
 .hero-image .image-wrapper {
-  width: 70%;
+  width: 75%;
   z-index: 2;
   transition: transform 0.5s ease;
   margin-top: 200px;
@@ -1045,17 +1045,31 @@ body {
 
 .about-highlight {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 2.5rem;
-  border-radius: 28px;
-  background:
-    radial-gradient(
-      circle at top right,
-      rgba(255, 255, 255, 0.42),
-      transparent 55%
-    ),
-    var(--color-yellow);
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.about-highlight-image {
+  margin-left: auto;
+  transform: translateX(80px);
+}
+
+.about-highlight-image img {
+  display: block;
+  width: 600px;
+  height: auto;
+}
+
+.about-highlight img {
+  transform: translateX(40px);
+}
+
+@media (max-width: 768px) {
+  .about-highlight-image {
+    transform: none;
+    margin-left: 0;
+  }
 }
 
 .about-highlight-icon {
