@@ -56,9 +56,9 @@ audocao/
 
 - [x] Interface de Login e Cadastro com validação visual.
 - [x] Home com Grid responsivo de pets.
-- [ ] Filtros por espécie (Cães, Gatos e Outros).
+- [x] Filtros por espécie (Cães, Gatos e Outros).
 - [ ] Integração com Backend/API para listagem real de animais.
-- [ ] Perfil detalhado do animal com formulário de interesse.
+- [x] Perfil detalhado do animal com formulário de interesse.
 
 ---
 🎨 **Desenvolvedores:** Paula Arruda e Carolina Batatinha  
