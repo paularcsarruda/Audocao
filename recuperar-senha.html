@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recuperar senha | AuDoção</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="auth-page">
+  <main class="auth-container">
+    <section class="auth-card">
+      <header class="auth-header">
+        <div class="logo">🐾</div>
+        <h1>Recuperar senha</h1>
+        <p>Informe seu e-mail para receber as instruções.</p>
+      </header>
+
+      <form class="auth-form" id="forgot-password-form">
+        <div class="input-group">
+          <label for="email">E-mail</label>
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="seu@email.com"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+        <p
+          class="form-message"
+          id="form-message"
+          role="status"
+          aria-live="polite"
+        ></p>
+
+        <button type="submit" class="btn-primary" id="submit-button">
+          Enviar link de recuperação
+        </button>
+      </form>
+
+      <footer class="auth-footer">
+        <a href="login.html">Voltar para o login</a>
+      </footer>
+    </section>
+  </main>
+
+  <script src="js/recuperar-senha.js"></script>
+</body>
+</html>

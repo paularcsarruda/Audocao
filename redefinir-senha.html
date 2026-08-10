@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redefinir senha | AuDoção</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="auth-page">
+  <main class="auth-container">
+    <section class="auth-card">
+      <header class="auth-header">
+        <div class="logo">🐾</div>
+        <h1>Criar nova senha</h1>
+        <p>Escolha uma nova senha para acessar sua conta.</p>
+      </header>
+
+      <form class="auth-form" id="reset-password-form">
+        <div class="input-group">
+          <label for="password">Nova senha</label>
+
+          <input
+            type="password"
+            id="password"
+            placeholder="Mínimo de 8 caracteres"
+            minlength="8"
+            autocomplete="new-password"
+            required
+          >
+        </div>
+
+        <div class="input-group">
+          <label for="password-confirmation">Confirmar nova senha</label>
+
+          <input
+            type="password"
+            id="password-confirmation"
+            placeholder="Repita a nova senha"
+            minlength="8"
+            autocomplete="new-password"
+            required
+          >
+        </div>
+
+        <p
+          class="form-message"
+          id="reset-message"
+          role="alert"
+          aria-live="polite"
+        ></p>
+
+        <button type="submit" class="btn-primary" id="reset-button">
+          Alterar senha
+        </button>
+      </form>
+
+      <footer class="auth-footer">
+        <a href="login.html">Voltar para o login</a>
+      </footer>
+    </section>
+  </main>
+
+  <script src="js/redefinir-senha.js"></script>
+</body>
+</html>
